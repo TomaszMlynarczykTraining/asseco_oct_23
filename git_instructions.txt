@@ -1,0 +1,10 @@
+Wejscie w folder grupy
+Prawym gdziekolwiek - git bash
+
+Pobieranie:
+- git pull
+
+Wysy³anie
+- git add *
+- git commit -m 'some message'
+- git push
