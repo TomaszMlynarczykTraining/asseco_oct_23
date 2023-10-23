@@ -54,17 +54,19 @@
       </bpmn:lane>
       <bpmn:lane id="Lane_1we45n6" name="System Mailingowy">
         <bpmn:flowNodeRef>Event_0uhj3da</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_1ce9asc</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_1mplirt</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0tv963b</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_1arjolt</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_1ju77m9</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_1ce9asc</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_1mplirt</bpmn:flowNodeRef>
         <bpmn:childLaneSet id="LaneSet_1e12ab7">
           <bpmn:lane id="Lane_17m201o">
             <bpmn:flowNodeRef>Event_0uhj3da</bpmn:flowNodeRef>
-            <bpmn:flowNodeRef>Event_1ce9asc</bpmn:flowNodeRef>
-            <bpmn:flowNodeRef>Event_1mplirt</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Event_0tv963b</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Gateway_1arjolt</bpmn:flowNodeRef>
+            <bpmn:flowNodeRef>Event_1ju77m9</bpmn:flowNodeRef>
+            <bpmn:flowNodeRef>Event_1ce9asc</bpmn:flowNodeRef>
+            <bpmn:flowNodeRef>Event_1mplirt</bpmn:flowNodeRef>
           </bpmn:lane>
         </bpmn:childLaneSet>
       </bpmn:lane>
@@ -161,11 +163,9 @@
     </bpmn:intermediateThrowEvent>
     <bpmn:sequenceFlow id="Flow_0dpcddf" name="Nie" sourceRef="Gateway_1arjolt" targetRef="Event_1mplirt" />
     <bpmn:sequenceFlow id="Flow_05o151m" name="Tak" sourceRef="Gateway_1arjolt" targetRef="Event_0tv963b" />
-    <bpmn:endEvent id="Event_1mplirt" name="Zakończenie procesu zakupów i przekierowanie do logistyki">
-      <bpmn:incoming>Flow_0dpcddf</bpmn:incoming>
-    </bpmn:endEvent>
     <bpmn:intermediateThrowEvent id="Event_0tv963b">
       <bpmn:incoming>Flow_05o151m</bpmn:incoming>
+      <bpmn:outgoing>Flow_1jtc9r9</bpmn:outgoing>
       <bpmn:escalationEventDefinition id="EscalationEventDefinition_10es12a" />
     </bpmn:intermediateThrowEvent>
     <bpmn:exclusiveGateway id="Gateway_1arjolt" name="Czy wystąpił błąd?">
@@ -173,6 +173,13 @@
       <bpmn:outgoing>Flow_0dpcddf</bpmn:outgoing>
       <bpmn:outgoing>Flow_05o151m</bpmn:outgoing>
     </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="Event_1ju77m9">
+      <bpmn:incoming>Flow_1jtc9r9</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1jtc9r9" sourceRef="Event_0tv963b" targetRef="Event_1ju77m9" />
+    <bpmn:endEvent id="Event_1mplirt" name="Zakończenie procesu zakupów i przekierowanie do logistyki">
+      <bpmn:incoming>Flow_0dpcddf</bpmn:incoming>
+    </bpmn:endEvent>
   </bpmn:process>
   <bpmn:category id="Category_0fznhna">
     <bpmn:categoryValue id="CategoryValue_0efxj96" value="Przetworzenie płatności" />
@@ -180,35 +187,35 @@
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_11dw9un">
       <bpmndi:BPMNShape id="Participant_1yqleam_di" bpmnElement="Participant_1yqleam" isHorizontal="true">
-        <dc:Bounds x="151" y="80" width="1367" height="1120" />
+        <dc:Bounds x="151" y="80" width="1517" height="1120" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_1we45n6_di" bpmnElement="Lane_1we45n6" isHorizontal="true">
-        <dc:Bounds x="181" y="920" width="1337" height="280" />
+        <dc:Bounds x="181" y="920" width="1487" height="280" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_17m201o_di" bpmnElement="Lane_17m201o" isHorizontal="true">
-        <dc:Bounds x="211" y="920" width="1307" height="280" />
+        <dc:Bounds x="211" y="920" width="1457" height="280" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_1nst61d_di" bpmnElement="Lane_1nst61d" isHorizontal="true">
-        <dc:Bounds x="181" y="670" width="1337" height="250" />
+        <dc:Bounds x="181" y="670" width="1487" height="250" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_0mqkuav_di" bpmnElement="Lane_0mqkuav" isHorizontal="true">
-        <dc:Bounds x="211" y="670" width="1307" height="250" />
+        <dc:Bounds x="211" y="670" width="1457" height="250" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_16hchla_di" bpmnElement="Lane_16hchla" isHorizontal="true">
-        <dc:Bounds x="181" y="370" width="1337" height="300" />
+        <dc:Bounds x="181" y="370" width="1487" height="300" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_0ln6hsl_di" bpmnElement="Lane_0ln6hsl" isHorizontal="true">
-        <dc:Bounds x="211" y="370" width="1307" height="300" />
+        <dc:Bounds x="211" y="370" width="1457" height="300" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_0osrdmt_di" bpmnElement="Lane_0osrdmt" isHorizontal="true">
-        <dc:Bounds x="181" y="80" width="1337" height="290" />
+        <dc:Bounds x="181" y="80" width="1487" height="290" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_0clud6u_di" bpmnElement="Lane_0clud6u" isHorizontal="true">
-        <dc:Bounds x="211" y="80" width="1307" height="290" />
+        <dc:Bounds x="211" y="80" width="1457" height="290" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
         <dc:Bounds x="224" y="262" width="36" height="36" />
@@ -276,12 +283,6 @@
           <dc:Bounds x="1126" y="1055" width="90" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1mplirt_di" bpmnElement="Event_1mplirt">
-        <dc:Bounds x="1382" y="1012" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1346" y="1063" width="87" height="53" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0qfa0it_di" bpmnElement="Event_0tv963b">
         <dc:Bounds x="1382" y="952" width="36" height="36" />
       </bpmndi:BPMNShape>
@@ -289,6 +290,15 @@
         <dc:Bounds x="1225" y="1005" width="50" height="50" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="1219" y="1065" width="62" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1ju77m9_di" bpmnElement="Event_1ju77m9">
+        <dc:Bounds x="1532" y="952" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1mplirt_di" bpmnElement="Event_1mplirt">
+        <dc:Bounds x="1532" y="1012" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1496" y="1063" width="87" height="53" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1nn5s0j_di" bpmnElement="Flow_1nn5s0j">
@@ -394,9 +404,9 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0dpcddf_di" bpmnElement="Flow_0dpcddf">
         <di:waypoint x="1275" y="1030" />
-        <di:waypoint x="1382" y="1030" />
+        <di:waypoint x="1532" y="1030" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1339" y="1037" width="17" height="14" />
+          <dc:Bounds x="1311" y="1033" width="17" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_05o151m_di" bpmnElement="Flow_05o151m">
@@ -404,8 +414,12 @@
         <di:waypoint x="1250" y="970" />
         <di:waypoint x="1382" y="970" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1257" y="985" width="17" height="14" />
+          <dc:Bounds x="1311" y="947" width="17" height="14" />
         </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1jtc9r9_di" bpmnElement="Flow_1jtc9r9">
+        <di:waypoint x="1418" y="970" />
+        <di:waypoint x="1532" y="970" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Group_1szxis5_di" bpmnElement="Group_1szxis5" bioc:stroke="#205022" bioc:fill="#c8e6c9" color:background-color="#c8e6c9" color:border-color="#205022">
         <dc:Bounds x="655" y="360" width="370" height="660" />
