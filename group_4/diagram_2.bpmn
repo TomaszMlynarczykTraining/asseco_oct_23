@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1rmf0gl" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.8.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <bpmn:collaboration id="Collaboration_18hm34x">
+    <bpmn:participant id="Participant_1aesgse" processRef="Process_028khdc" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_028khdc" isExecutable="true">
+    <bpmn:laneSet id="LaneSet_1rgyx50">
+      <bpmn:lane id="Lane_13fswea" name="Pracownik serwisu">
+        <bpmn:flowNodeRef>Event_1dgmstj</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1pqsc1v</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1wvkb4e</bpmn:flowNodeRef>
+        <bpmn:childLaneSet id="LaneSet_1g9ub27">
+          <bpmn:lane id="Lane_11dt5ms">
+            <bpmn:flowNodeRef>Event_1dgmstj</bpmn:flowNodeRef>
+            <bpmn:flowNodeRef>Activity_1pqsc1v</bpmn:flowNodeRef>
+            <bpmn:flowNodeRef>Activity_1wvkb4e</bpmn:flowNodeRef>
+          </bpmn:lane>
+        </bpmn:childLaneSet>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_0ogvybk" name="Planista konswerwacji">
+        <bpmn:childLaneSet id="LaneSet_0l4x159">
+          <bpmn:lane id="Lane_15z8m63" />
+        </bpmn:childLaneSet>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_1rmbj7n" name="System zgłoszeń">
+        <bpmn:childLaneSet id="LaneSet_08e1yif">
+          <bpmn:lane id="Lane_01y1vez" />
+        </bpmn:childLaneSet>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="Event_1dgmstj" name="Zgłoszenie awarii sprzętu">
+      <bpmn:outgoing>Flow_14th8ym</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_1pqsc1v" name="Utworzenie powiadomienia" />
+    <bpmn:task id="Activity_1wvkb4e" name="Otrzymanie informacji odnośnie awarii">
+      <bpmn:incoming>Flow_14th8ym</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_14th8ym" sourceRef="Event_1dgmstj" targetRef="Activity_1wvkb4e" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_18hm34x">
+      <bpmndi:BPMNShape id="Participant_1aesgse_di" bpmnElement="Participant_1aesgse" isHorizontal="true">
+        <dc:Bounds x="157" y="77" width="983" height="970" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_13fswea_di" bpmnElement="Lane_13fswea" isHorizontal="true">
+        <dc:Bounds x="187" y="77" width="953" height="463" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_11dt5ms_di" bpmnElement="Lane_11dt5ms" isHorizontal="true">
+        <dc:Bounds x="217" y="77" width="923" height="463" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0ogvybk_di" bpmnElement="Lane_0ogvybk" isHorizontal="true">
+        <dc:Bounds x="187" y="720" width="953" height="327" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_15z8m63_di" bpmnElement="Lane_15z8m63" isHorizontal="true">
+        <dc:Bounds x="217" y="720" width="923" height="327" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1rmbj7n_di" bpmnElement="Lane_1rmbj7n" isHorizontal="true">
+        <dc:Bounds x="187" y="540" width="953" height="180" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_01y1vez_di" bpmnElement="Lane_01y1vez" isHorizontal="true">
+        <dc:Bounds x="217" y="540" width="923" height="180" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1dgmstj_di" bpmnElement="Event_1dgmstj">
+        <dc:Bounds x="262" y="132" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="238" y="175" width="85" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1pqsc1v_di" bpmnElement="Activity_1pqsc1v">
+        <dc:Bounds x="470" y="140" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1wvkb4e_di" bpmnElement="Activity_1wvkb4e">
+        <dc:Bounds x="350" y="460" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_14th8ym_di" bpmnElement="Flow_14th8ym">
+        <di:waypoint x="298" y="150" />
+        <di:waypoint x="324" y="150" />
+        <di:waypoint x="324" y="500" />
+        <di:waypoint x="350" y="500" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
