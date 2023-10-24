@@ -112,7 +112,7 @@
       <bpmn:incoming>Flow_0k79qot</bpmn:incoming>
       <bpmn:outgoing>Flow_0fmkiim</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:userTask id="Activity_0zsmf8s" name="Pytanie o akceptację regulaminu">
+    <bpmn:userTask id="Activity_0zsmf8s" name="Pytanie o akceptację regulaminu" camunda:formRef="Form_0h6ntqg" camunda:formRefBinding="latest">
       <bpmn:incoming>Flow_0ducwwi</bpmn:incoming>
       <bpmn:outgoing>Flow_0r3chls</bpmn:outgoing>
     </bpmn:userTask>

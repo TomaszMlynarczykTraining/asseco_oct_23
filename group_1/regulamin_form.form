@@ -1,0 +1,19 @@
+{
+  "components": [
+    {
+      "label": "zaakceptuj regulamin",
+      "type": "checkbox",
+      "id": "Field_059ki48",
+      "key": "regulamin"
+    }
+  ],
+  "type": "default",
+  "id": "Form_0h6ntqg",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.1.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.8.0"
+  },
+  "schemaVersion": 7
+}

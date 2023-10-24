@@ -14,7 +14,8 @@
       "label": "rodzaj platnosci",
       "type": "select",
       "id": "Field_0zxhilw",
-      "key": "field_0ivw2v6"
+      "key": "platnosc",
+      "defaultValue": "karta"
     }
   ],
   "type": "default",
