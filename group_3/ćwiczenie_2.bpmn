@@ -14,7 +14,7 @@
         <bpmn:flowNodeRef>GW_003_CZY_ZATRUDNIA</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>UT_005_KONTAKT_HR</bpmn:flowNodeRef>
         <bpmn:childLaneSet id="LaneSet_072c7pr">
-          <bpmn:lane id="Lane_0qvnqoc">
+          <bpmn:lane id="LANE_PRACOWNIK">
             <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>GW_001_ZLECENIE_KIEROWNIK</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>UT_001_ZLECENIE_ZATRUDNIENIA</bpmn:flowNodeRef>
@@ -39,7 +39,7 @@
         <bpmn:flowNodeRef>TIMER_OCZEKIWANIE_NA_KANDYDATOW</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>TIMER_ROZMOWA</bpmn:flowNodeRef>
         <bpmn:childLaneSet id="LaneSet_0z9xmxm">
-          <bpmn:lane id="Lane_0tmhg60">
+          <bpmn:lane id="LANE_HR">
             <bpmn:flowNodeRef>UT_007_PRZYGOTOWANIE_UMOWY</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>UT_008_PRZESLANIE_UMOWY</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>MT_002_OTRZYMANIE_UMOWY</bpmn:flowNodeRef>
@@ -58,7 +58,7 @@
       <bpmn:lane id="Lane_0k6mltl" name="Kandydaci">
         <bpmn:flowNodeRef>UT_009_PODPISANIE_UMOWY</bpmn:flowNodeRef>
         <bpmn:childLaneSet id="LaneSet_08pfdqu">
-          <bpmn:lane id="Lane_00angsk">
+          <bpmn:lane id="LANE_KANDYDAT">
             <bpmn:flowNodeRef>UT_009_PODPISANIE_UMOWY</bpmn:flowNodeRef>
           </bpmn:lane>
         </bpmn:childLaneSet>
@@ -68,12 +68,16 @@
       <bpmn:outgoing>Flow_0eoe7fu</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="Flow_14p5f8d" sourceRef="UT_001_ZLECENIE_ZATRUDNIENIA" targetRef="GW_001_ZLECENIE_KIEROWNIK" />
-    <bpmn:sequenceFlow id="Flow_1y6e4au" name="Tak" sourceRef="GW_001_ZLECENIE_KIEROWNIK" targetRef="UT_002_ZAMOWIENIE_OGLOSZENIA" />
+    <bpmn:sequenceFlow id="Flow_1y6e4au" name="Tak" sourceRef="GW_001_ZLECENIE_KIEROWNIK" targetRef="UT_002_ZAMOWIENIE_OGLOSZENIA">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="END_EVENT_002" name="Nie" sourceRef="GW_001_ZLECENIE_KIEROWNIK" targetRef="Event_03ejlp6" />
     <bpmn:sequenceFlow id="Flow_0eoe7fu" sourceRef="StartEvent_1" targetRef="UT_001_ZLECENIE_ZATRUDNIENIA" />
     <bpmn:sequenceFlow id="Flow_1uh9qdg" name="Nie" sourceRef="GW_003_CZY_ZATRUDNIA" targetRef="GW_002" />
     <bpmn:sequenceFlow id="Flow_1n5a37q" sourceRef="MT_001_ROZMOWA_KWALIFIKACYJNA" targetRef="GW_003_CZY_ZATRUDNIA" />
-    <bpmn:sequenceFlow id="Flow_10735u9" name="Tak" sourceRef="GW_003_CZY_ZATRUDNIA" targetRef="UT_005_KONTAKT_HR" />
+    <bpmn:sequenceFlow id="Flow_10735u9" name="Tak" sourceRef="GW_003_CZY_ZATRUDNIA" targetRef="UT_005_KONTAKT_HR">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_0tiz4i5" sourceRef="MT_002_OTRZYMANIE_UMOWY" targetRef="END_EVENT_001" />
     <bpmn:sequenceFlow id="Flow_1c17n5f" sourceRef="UT_002_ZAMOWIENIE_OGLOSZENIA" targetRef="UT_003_OPUBLIKOWANIE_OGLOSZENIA" />
     <bpmn:sequenceFlow id="Flow_05z4s1r" sourceRef="UT_005_KONTAKT_HR" targetRef="UT_007_PRZYGOTOWANIE_UMOWY" />
@@ -168,7 +172,9 @@
     <bpmn:sequenceFlow id="Flow_0udz1gn" sourceRef="UT_003_OPUBLIKOWANIE_OGLOSZENIA" targetRef="GW_002" />
     <bpmn:sequenceFlow id="Flow_00nno9l" sourceRef="TIMER_OCZEKIWANIE_NA_KANDYDATOW" targetRef="UT_004_WYBOR_KANDYDATOW" />
     <bpmn:sequenceFlow id="Flow_1xmftpg" sourceRef="UT_004_WYBOR_KANDYDATOW" targetRef="GW_003_ZNALEZIONO_KANDYDATOW" />
-    <bpmn:sequenceFlow id="Flow_1r55fgi" name="Tak" sourceRef="GW_003_ZNALEZIONO_KANDYDATOW" targetRef="UT_005_UMOWIENIE_ROZMOWY" />
+    <bpmn:sequenceFlow id="Flow_1r55fgi" name="Tak" sourceRef="GW_003_ZNALEZIONO_KANDYDATOW" targetRef="UT_005_UMOWIENIE_ROZMOWY">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_15kmtaa" sourceRef="UT_005_UMOWIENIE_ROZMOWY" targetRef="TIMER_ROZMOWA" />
     <bpmn:sequenceFlow id="Flow_0w3m6vt" sourceRef="TIMER_ROZMOWA" targetRef="MT_001_ROZMOWA_KWALIFIKACYJNA" />
     <bpmn:sequenceFlow id="Flow_0daokrt" sourceRef="GW_002" targetRef="TIMER_OCZEKIWANIE_NA_KANDYDATOW" />
@@ -184,21 +190,21 @@
         <dc:Bounds x="186" y="77" width="2582" height="202" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Lane_0qvnqoc_di" bpmnElement="Lane_0qvnqoc" isHorizontal="true">
+      <bpmndi:BPMNShape id="Lane_0qvnqoc_di" bpmnElement="LANE_PRACOWNIK" isHorizontal="true">
         <dc:Bounds x="216" y="77" width="2552" height="202" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_1jrzg2p_di" bpmnElement="Lane_1jrzg2p" isHorizontal="true">
         <dc:Bounds x="186" y="279" width="2582" height="211" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Lane_0tmhg60_di" bpmnElement="Lane_0tmhg60" isHorizontal="true">
+      <bpmndi:BPMNShape id="Lane_0tmhg60_di" bpmnElement="LANE_HR" isHorizontal="true">
         <dc:Bounds x="216" y="279" width="2552" height="211" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_0k6mltl_di" bpmnElement="Lane_0k6mltl" isHorizontal="true">
         <dc:Bounds x="186" y="490" width="2582" height="180" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Lane_00angsk_di" bpmnElement="Lane_00angsk" isHorizontal="true">
+      <bpmndi:BPMNShape id="Lane_00angsk_di" bpmnElement="LANE_KANDYDAT" isHorizontal="true">
         <dc:Bounds x="216" y="490" width="2552" height="180" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_1jmesic_di" bpmnElement="GW_001_ZLECENIE_KIEROWNIK" isMarkerVisible="true">
