@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0igfv10" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.8.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <bpmn:process id="Process_16fd4y7" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_16sfxfc</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_16sfxfc" sourceRef="StartEvent_1" targetRef="Activity_0gzow96" />
+    <bpmn:userTask id="Activity_0gzow96" name="User task">
+      <bpmn:incoming>Flow_16sfxfc</bpmn:incoming>
+      <bpmn:outgoing>Flow_1galgjj</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_1galgjj" sourceRef="Activity_0gzow96" targetRef="Event_1uecvtz" />
+    <bpmn:intermediateThrowEvent id="Event_1uecvtz">
+      <bpmn:incoming>Flow_1galgjj</bpmn:incoming>
+      <bpmn:outgoing>Flow_1owoiz4</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_06u8jb8" messageRef="Message_2ji21g7" camunda:expression="${execution.getProcessEngineServices().getRuntimeService().createMessageCorrelation(&#34;MSG_001_CANCEL_TASK&#34;).correlateWithResult()}" />
+    </bpmn:intermediateThrowEvent>
+    <bpmn:endEvent id="Event_0npzxqv">
+      <bpmn:incoming>Flow_0wuz2ge</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1owoiz4" sourceRef="Event_1uecvtz" targetRef="Activity_09rxvyu" />
+    <bpmn:sequenceFlow id="Flow_0wuz2ge" sourceRef="Activity_09rxvyu" targetRef="Event_0npzxqv" />
+    <bpmn:userTask id="Activity_09rxvyu" name="User task 2">
+      <bpmn:incoming>Flow_1owoiz4</bpmn:incoming>
+      <bpmn:outgoing>Flow_0wuz2ge</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmn:message id="Message_2ji21g7" name="MSG_001_CANCEL_TASK" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_16fd4y7">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="142" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0r9hohb_di" bpmnElement="Activity_0gzow96">
+        <dc:Bounds x="250" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0npzxqv_di" bpmnElement="Event_0npzxqv">
+        <dc:Bounds x="682" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_098i0v9_di" bpmnElement="Activity_09rxvyu">
+        <dc:Bounds x="520" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_002m0t3_di" bpmnElement="Event_1uecvtz">
+        <dc:Bounds x="412" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_16sfxfc_di" bpmnElement="Flow_16sfxfc">
+        <di:waypoint x="178" y="117" />
+        <di:waypoint x="250" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1galgjj_di" bpmnElement="Flow_1galgjj">
+        <di:waypoint x="350" y="117" />
+        <di:waypoint x="412" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0wuz2ge_di" bpmnElement="Flow_0wuz2ge">
+        <di:waypoint x="620" y="117" />
+        <di:waypoint x="682" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1owoiz4_di" bpmnElement="Flow_1owoiz4">
+        <di:waypoint x="448" y="117" />
+        <di:waypoint x="520" y="117" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
