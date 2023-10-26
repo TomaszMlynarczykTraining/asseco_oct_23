@@ -160,8 +160,8 @@
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1r55fgi</bpmn:incoming>
       <bpmn:outgoing>Flow_15kmtaa</bpmn:outgoing>
-      <bpmn:multiInstanceLoopCharacteristics isSequential="true" camunda:collection="listaKandydatow" camunda:elementVariable="kandydat">
-        <bpmn:loopCardinality xsi:type="bpmn:tFormalExpression">4</bpmn:loopCardinality>
+      <bpmn:multiInstanceLoopCharacteristics camunda:collection="listaKandydatow" camunda:elementVariable="kandydat">
+        <bpmn:loopCardinality xsi:type="bpmn:tFormalExpression">3</bpmn:loopCardinality>
       </bpmn:multiInstanceLoopCharacteristics>
     </bpmn:userTask>
     <bpmn:manualTask id="MT_001_ROZMOWA_KWALIFIKACYJNA" name="Rozmowa kwalifikacyjna">
@@ -288,6 +288,7 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1pi65ux_di" bpmnElement="UT_005_UMOWIENIE_ROZMOWY" bioc:stroke="#6b3c00" bioc:fill="#ffe0b2" color:background-color="#ffe0b2" color:border-color="#6b3c00">
         <dc:Bounds x="1300" y="350" width="100" height="80" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0o79kap_di" bpmnElement="MT_001_ROZMOWA_KWALIFIKACYJNA" bioc:stroke="#6b3c00" bioc:fill="#ffe0b2" color:background-color="#ffe0b2" color:border-color="#6b3c00">
         <dc:Bounds x="1530" y="350" width="100" height="80" />

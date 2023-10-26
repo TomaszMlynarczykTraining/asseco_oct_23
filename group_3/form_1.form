@@ -1,0 +1,34 @@
+{
+  "components": [
+    {
+      "text": "# Opcja płatności",
+      "type": "text",
+      "id": "Field_0w1ecch"
+    },
+    {
+      "values": [
+        {
+          "label": "Przelew",
+          "value": "false"
+        },
+        {
+          "label": "Karta",
+          "value": "true"
+        }
+      ],
+      "label": "Typ płatności",
+      "type": "radio",
+      "id": "Field_0xmy4qn",
+      "key": "isCard"
+    }
+  ],
+  "type": "default",
+  "id": "Form_03ph6zv",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.8.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 7
+}

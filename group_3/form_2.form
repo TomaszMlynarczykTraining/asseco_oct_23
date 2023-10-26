@@ -1,0 +1,25 @@
+{
+  "components": [
+    {
+      "text": "# Akceptacja regulaminu",
+      "type": "text",
+      "id": "Field_0cktl3f"
+    },
+    {
+      "label": "Akceptuje",
+      "type": "checkbox",
+      "id": "Field_095ecq3",
+      "key": "acepted",
+      "defaultValue": true
+    }
+  ],
+  "type": "default",
+  "id": "Form_09pqtgy",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.8.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 7
+}

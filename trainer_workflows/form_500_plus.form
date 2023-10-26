@@ -1,0 +1,24 @@
+{
+  "components": [
+    {
+      "text": "# Czy wniosek jest poprawny?",
+      "type": "text",
+      "id": "Field_0fzz1es"
+    },
+    {
+      "label": "Wniosek poprawny",
+      "type": "checkbox",
+      "id": "Field_0qelxqw",
+      "key": "isAppliactionCorrect"
+    }
+  ],
+  "type": "default",
+  "id": "FR_001_500_PLUS",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.8.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 7
+}
