@@ -204,16 +204,16 @@
         <di:waypoint x="730" y="280" />
         <di:waypoint x="885" y="280" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="DataOutputAssociation_0keaa0o_di" bpmnElement="DataOutputAssociation_0keaa0o">
-        <di:waypoint x="1032" y="450" />
-        <di:waypoint x="1033" y="485" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Group_0ziflry_di" bpmnElement="Group_0ziflry">
         <dc:Bounds x="840" y="140" width="580" height="420" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="1086" y="147" width="88" height="53" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_0keaa0o_di" bpmnElement="DataOutputAssociation_0keaa0o">
+        <di:waypoint x="1032" y="450" />
+        <di:waypoint x="1033" y="485" />
+      </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
