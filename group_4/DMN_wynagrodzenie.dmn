@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Tabela1" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.8.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <decision id="DecyzjaWynagrodzenia" name="Decision 1">
+    <decisionTable id="DecisionTable_1cihd9d">
+      <input id="Input_1" label="Stanowisko" camunda:inputVariable="stanowisko">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>stanowisko</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0f0mryx" label="Staż_pracy" camunda:inputVariable="stazPracy">
+        <inputExpression id="LiteralExpression_0253i42" typeRef="integer">
+          <text>stazPracy</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Wynagrodzenia" name="wynagrodzenie" typeRef="integer" />
+      <rule id="DecisionRule_060zuqr">
+        <inputEntry id="UnaryTests_0pfqhob">
+          <text>"Programista"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ql0sww">
+          <text>1</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dzzrn4">
+          <text>8000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1vbvqaw">
+        <inputEntry id="UnaryTests_1dqytw4">
+          <text>"Konsultant"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n9joky">
+          <text>1</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ufm17j">
+          <text>5000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1tyvh18">
+        <inputEntry id="UnaryTests_1hzqobs">
+          <text>"Księgowy"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ac29fi">
+          <text>1</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gpwtry">
+          <text>2000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_048k4p4">
+        <inputEntry id="UnaryTests_0hjocrg">
+          <text>"Programista"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qvndkh">
+          <text>2</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09bjmw0">
+          <text>9000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0mieq3d">
+        <inputEntry id="UnaryTests_1f84z0r">
+          <text>"Konsultant"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0btfspc">
+          <text>2</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ejrhrr">
+          <text>6000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1bgzrlw">
+        <inputEntry id="UnaryTests_1kjqfll">
+          <text>"Księgowy"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1enjblo">
+          <text>2</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ezen0q">
+          <text>3000</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="DecyzjaWynagrodzenia">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
