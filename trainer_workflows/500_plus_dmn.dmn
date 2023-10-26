@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_14gd69j" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.8.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <decision id="DMN_001_500_PLUS" name="Decision 1">
+    <decisionTable id="DecisionTable_1yf9pqr">
+      <input id="Input_1" label="Liczba dzieci" camunda:inputVariable="numberOfChildren">
+        <inputExpression id="InputExpression_1" typeRef="integer">
+          <text>numberOfChildren</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1iu55p0" label="Dochód miesięczny" camunda:inputVariable="monthlyIncome">
+        <inputExpression id="LiteralExpression_1bxlanc" typeRef="integer">
+          <text>monthlyIncome</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Decyzja o przyznaniu wniosku" name="decision" typeRef="boolean" />
+      <rule id="DecisionRule_0zdz2f4">
+        <inputEntry id="UnaryTests_18n74um">
+          <text>&lt;1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hpryca">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16hqutt">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1k7bky3">
+        <inputEntry id="UnaryTests_1f9ig8i">
+          <text>[1..3]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wftqcz">
+          <text>2000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wnr78d">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1q6h01h">
+        <inputEntry id="UnaryTests_1qg0fvs">
+          <text>&gt;4</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ta4j2r">
+          <text>10000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tdghap">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09o8ifo">
+        <inputEntry id="UnaryTests_1c3ka68">
+          <text>5</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ddker7">
+          <text>20000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fkese7">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="DMN_001_500_PLUS">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
