@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0tsurkw" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.8.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <bpmn:process id="Process_0wm2h27" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0cuo6km</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0cuo6km" sourceRef="StartEvent_1" targetRef="Activity_0wco72m" />
+    <bpmn:endEvent id="Event_1jww17h">
+      <bpmn:incoming>Flow_0hhu3ad</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0hhu3ad" sourceRef="Activity_0wco72m" targetRef="Event_1jww17h" />
+    <bpmn:userTask id="Activity_0wco72m" name="Finish order">
+      <bpmn:incoming>Flow_0cuo6km</bpmn:incoming>
+      <bpmn:outgoing>Flow_0hhu3ad</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="Event_0n4042i">
+      <bpmn:incoming>Flow_1kzgh2s</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0wgy5kl" sourceRef="Event_0i5tfjr" targetRef="Activity_1cldzqe" />
+    <bpmn:sequenceFlow id="Flow_1kzgh2s" sourceRef="Activity_1cldzqe" targetRef="Event_0n4042i" />
+    <bpmn:userTask id="Activity_1cldzqe" name="Send reminder">
+      <bpmn:incoming>Flow_0wgy5kl</bpmn:incoming>
+      <bpmn:outgoing>Flow_1kzgh2s</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:boundaryEvent id="Event_0i5tfjr" name="Wait 15 seconds" cancelActivity="false" attachedToRef="Activity_0wco72m">
+      <bpmn:outgoing>Flow_0wgy5kl</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_1x8eysq">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT15S</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:boundaryEvent>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0wm2h27">
+      <bpmndi:BPMNShape id="Activity_07ddfss_di" bpmnElement="Activity_0wco72m">
+        <dc:Bounds x="290" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0n4042i_di" bpmnElement="Event_0n4042i">
+        <dc:Bounds x="602" y="202" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1jww17h_di" bpmnElement="Event_1jww17h">
+        <dc:Bounds x="602" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="142" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_04unqe3_di" bpmnElement="Activity_1cldzqe">
+        <dc:Bounds x="440" y="180" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1341s37_di" bpmnElement="Event_0i5tfjr">
+        <dc:Bounds x="352" y="139" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="399" y="150" width="81" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0cuo6km_di" bpmnElement="Flow_0cuo6km">
+        <di:waypoint x="178" y="117" />
+        <di:waypoint x="290" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0hhu3ad_di" bpmnElement="Flow_0hhu3ad">
+        <di:waypoint x="390" y="117" />
+        <di:waypoint x="602" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1kzgh2s_di" bpmnElement="Flow_1kzgh2s">
+        <di:waypoint x="540" y="220" />
+        <di:waypoint x="602" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0wgy5kl_di" bpmnElement="Flow_0wgy5kl">
+        <di:waypoint x="370" y="175" />
+        <di:waypoint x="370" y="220" />
+        <di:waypoint x="440" y="220" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

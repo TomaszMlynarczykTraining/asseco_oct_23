@@ -35,7 +35,7 @@
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_09soclc">
       <bpmndi:BPMNShape id="TextAnnotation_1uokey5_di" bpmnElement="TextAnnotation_1uokey5">
-        <dc:Bounds x="160" y="250" width="490" height="230" />
+        <dc:Bounds x="140" y="240" width="490" height="230" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
@@ -49,8 +49,8 @@
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Association_0dr4877_di" bpmnElement="Association_0dr4877">
-        <di:waypoint x="362" y="153" />
-        <di:waypoint x="230" y="250" />
+        <di:waypoint x="360" y="148" />
+        <di:waypoint x="214" y="240" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0xvg09o_di" bpmnElement="Flow_0xvg09o">
         <di:waypoint x="305" y="117" />
