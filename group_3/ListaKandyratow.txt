@@ -1,0 +1,14 @@
+{
+        listaKandydatow {
+            type Object,
+            value [user1,user2],
+            valueInfo {
+                objectTypeName java.util.ArrayList,
+                serializationDataFormatapplicationjson
+            }
+        },
+ newVar {
+ type String,
+ value var
+ }
+ }

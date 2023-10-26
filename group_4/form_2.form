@@ -1,0 +1,29 @@
+{
+  "components": [
+    {
+      "text": "# ",
+      "type": "text",
+      "id": "Field_0khkn7l"
+    },
+    {
+      "text": "# Czy płatność kartą?",
+      "type": "text",
+      "id": "Field_1l41err"
+    },
+    {
+      "label": "TAK",
+      "type": "checkbox",
+      "id": "Field_05zqrdl",
+      "key": "payCard"
+    }
+  ],
+  "type": "default",
+  "id": "FR_Platnosc",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.8.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 7
+}

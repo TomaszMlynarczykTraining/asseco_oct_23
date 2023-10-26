@@ -228,6 +228,9 @@
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
+<<<<<<< HEAD
+</bpmn:definitions>
+=======
   <bpmndi:BPMNDiagram id="BPMNDiagram_1yn7hmo">
     <bpmndi:BPMNPlane id="BPMNPlane_08lj119" bpmnElement="Activity_0qzgife">
       <bpmndi:BPMNShape id="Activity_1do5lst_di" bpmnElement="Activity_1ilujtn">
@@ -257,3 +260,4 @@
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
+>>>>>>> ec202a0aca196095759178884e376dd2b980f552
